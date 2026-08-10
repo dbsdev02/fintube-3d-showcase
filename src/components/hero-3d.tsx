@@ -1,5 +1,6 @@
-import fintubeAsset from "@/assets/fintube.jpeg.asset.json";
+import heroTube from "@/assets/hero-tube.png";
 import { useScrollProgress } from "@/hooks/use-scroll-anim";
+
 
 /**
  * Scroll-driven 3D hero: the finned tube rises from below the fold,
