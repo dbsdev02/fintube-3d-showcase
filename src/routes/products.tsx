@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { useScrollProgress } from "@/hooks/use-scroll-anim";
-import fintubeAsset from "@/assets/fintube.jpeg.asset.json";
+import heroTube from "@/assets/hero-tube.png";
 import bundleImg from "@/assets/product-bundle.jpg";
 import aluImg from "@/assets/product-alu.jpg";
 
@@ -41,7 +41,7 @@ const products = [
   },
   {
     name: "Integral low fin",
-    image: fintubeAsset.url,
+    image: heroTube,
     body: "Fins machined directly from the tube wall — one metal, no bond to fail. The default choice for shell-and-tube condensers.",
     specs: ["19–40 fins/inch", "Cu, CuNi, SS 316L", "Service to 480 °C"],
   },
@@ -68,7 +68,7 @@ function ProductCard({ p, index }: { p: (typeof products)[number]; index: number
             width={1000}
             height={750}
             loading="lazy"
-            className="h-72 w-full rounded-lg object-cover"
+            className="h-72 w-full rounded-lg bg-background object-contain p-4"
           />
         </div>
         <div>
