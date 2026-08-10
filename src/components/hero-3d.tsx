@@ -57,12 +57,13 @@ export function Hero3D() {
             }}
           >
             <img
-              src={fintubeAsset.url}
+              src={heroTube}
               alt="Copper spiral finned tube with machined fin profile"
-              width={1200}
-              height={800}
-              className="w-full rounded-lg shadow-forge mix-blend-lighten"
+              width={1600}
+              height={912}
+              className="w-full drop-shadow-[0_40px_60px_rgba(0,0,0,0.7)]"
             />
+
           </div>
         </div>
 
