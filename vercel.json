@@ -1,8 +1,4 @@
 {
   "buildCommand": "bun run build",
-  "outputDirectory": ".output/public",
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/server" }],
-  "functions": {
-    "api/server.ts": { "runtime": "nodejs20.x" }
-  }
+  "outputDirectory": ".vercel/output"
 }
