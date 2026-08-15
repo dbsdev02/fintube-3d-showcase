@@ -40,11 +40,11 @@ export function Hero3D() {
         </div>
 
         {/* 3D product stage, clipped to the lower band of the viewport */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[46vh] overflow-hidden sm:h-[44vh]">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[46vh] overflow-hidden">
           <div
-            className="absolute inset-x-0 bottom-0 flex justify-center will-change-transform"
+            className="absolute bottom-0 left-1/2 h-[42vh] w-[24vh] -translate-x-1/2 will-change-transform"
             style={{
-              transform: `translateY(${rise}%)`,
+              transform: `translateX(-50%) translateY(${rise}%)`,
               transformStyle: "preserve-3d",
               transition: "transform 100ms linear",
             }}
@@ -54,9 +54,9 @@ export function Hero3D() {
               alt="Copper spiral finned tube with machined fin profile"
               width={1600}
               height={912}
-              className="h-auto w-[64vh] max-w-none origin-bottom drop-shadow-[0_40px_60px_rgba(0,0,0,0.7)]"
+              className="absolute left-1/2 top-1/2 h-auto w-[42vh] max-w-none drop-shadow-[0_40px_60px_rgba(0,0,0,0.7)]"
               style={{
-                transform: `rotate(90deg) translateY(-50%) rotateY(${rotateY}deg) rotateX(${tilt}deg) scale(${scale})`,
+                transform: `translate(-50%, -50%) rotate(90deg) rotateX(${rotateY}deg) rotateY(${tilt}deg) scale(${scale})`,
               }}
             />
           </div>
