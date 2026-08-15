@@ -45,29 +45,29 @@ export function Hero3D() {
 
 
   return (
-    <section ref={ref} className="relative h-[220vh]">
+    <section ref={ref} className="relative h-[240vh]">
       <div className="sticky top-0 h-screen overflow-hidden scene-3d">
         <div className="absolute inset-0 grid-etch opacity-[0.35]" />
         <div className="absolute inset-0 glow-deep" style={{ opacity: glow }} />
 
-        {/* Copy block — always on top, never covered by the tube */}
-        <div className="relative z-20 mx-auto flex max-w-7xl flex-col px-6 pt-28 text-center sm:pt-32">
+        {/* Copy block — kept high so the large tube below never covers it */}
+        <div className="relative z-20 mx-auto flex max-w-7xl flex-col px-6 pt-12 text-center sm:pt-14">
           <p className="eyebrow animate-rise-in">Finned tube engineering</p>
-          <h1 className="mx-auto mt-5 max-w-4xl text-4xl font-bold leading-[0.95] sm:text-6xl lg:text-7xl">
+          <h1 className="mx-auto mt-4 max-w-4xl text-4xl font-bold leading-[0.95] sm:text-6xl lg:text-7xl">
             Heat transfer,
             <br />
             <span className="text-forge">multiplied</span>
           </h1>
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
             Extruded, spiral-wound and L-footed fins rolled onto copper, aluminium and stainless
             base tubes — up to 12× the surface area of a bare tube.
           </p>
         </div>
 
-        {/* 3D product stage, clipped to the lower band of the viewport */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[46vh] overflow-hidden">
+        {/* 3D product stage — large, cropped close-up that rises from below */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[58vh] overflow-hidden">
           <div
-            className="absolute bottom-0 left-1/2 h-[42vh] w-[24vh] -translate-x-1/2 will-change-transform"
+            className="absolute bottom-0 left-1/2 h-[54vh] w-[28vh] -translate-x-1/2 will-change-transform"
             style={{
               transform: `translateX(-50%) translateY(${rise}%)`,
               transformStyle: "preserve-3d",
@@ -79,9 +79,9 @@ export function Hero3D() {
               alt="Copper spiral finned tube with machined fin profile"
               width={1600}
               height={912}
-              className="absolute left-1/2 top-1/2 h-auto w-[42vh] max-w-none drop-shadow-[0_40px_60px_rgba(0,0,0,0.7)]"
+              className="absolute left-1/2 top-1/2 h-auto w-[72vh] max-w-none drop-shadow-[0_40px_60px_rgba(0,0,0,0.7)]"
               style={{
-                transform: `translate(calc(-50% + 11vh), -50%) rotate(110deg) rotateX(${spin}deg) rotateY(${tilt}deg) scale(${scale})`,
+                transform: `translate(calc(-50% + 15vh), -50%) rotate(110deg) rotateX(${spin}deg) rotateY(${tilt}deg) scale(${scale})`,
               }}
             />
           </div>
