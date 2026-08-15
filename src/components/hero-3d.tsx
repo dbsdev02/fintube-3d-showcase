@@ -1,23 +1,48 @@
+import { useEffect, useRef, useState } from "react";
 import heroTube from "@/assets/hero-tube.png";
-import { useScrollProgress } from "@/hooks/use-scroll-anim";
 
 /**
  * Scroll-driven 3D hero: a vertical finned tube rises from below the fold,
  * rotates gently in space and settles. The stage is clipped to the lower
- * half of the viewport so the tube never overlaps the headline text.
+ * band of the viewport so the tube never overlaps the headline text.
  */
 export function Hero3D() {
-  const { ref, progress } = useScrollProgress<HTMLDivElement>();
+  const ref = useRef<HTMLElement | null>(null);
+  const [progress, setProgress] = useState(0);
 
-  // Normalised 0 -> 1 across the tall scroll track.
-  const p = Math.min(1, Math.max(0, progress * 1.5));
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const rect = el.getBoundingClientRect();
+      const track = Math.max(1, rect.height - window.innerHeight);
+      setProgress(Math.min(1, Math.max(0, -rect.top / track)));
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  // Normalised 0 -> 1 across the sticky scroll track.
+  const p = Math.min(1, progress * 1.35);
   const ease = 1 - Math.pow(1 - p, 3);
 
-  const rise = 100 - ease * 100; // % of the stage height: starts fully below
-  const rotateY = 26 - ease * 26;
-  const tilt = -8 + ease * 8;
-  const scale = 0.86 + ease * 0.14;
+  const rise = 110 - ease * 110; // % of the stage height: starts fully below
+  const spin = 20 - ease * 20;
+  const tilt = -6 + ease * 6;
+  const scale = 0.88 + ease * 0.12;
   const glow = 0.2 + ease * 0.65;
+
 
   return (
     <section ref={ref} className="relative h-[220vh]">
