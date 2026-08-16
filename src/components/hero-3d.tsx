@@ -37,7 +37,7 @@ export function Hero3D() {
   const p = Math.min(1, progress * 1.35);
   const ease = 1 - Math.pow(1 - p, 3);
 
-  const rise = 110 - ease * (110 - 6); // rises from fully below and settles inside the stage
+  const rise = 110 - ease * (110 - 13); // rises from fully below and settles clear of the copy
   const spin = 20 - ease * 20;
   const tilt = -6 + ease * 6;
   const scale = 0.9 + ease * 0.1;
