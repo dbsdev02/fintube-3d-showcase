@@ -51,7 +51,7 @@ export function Hero3D() {
         <div className="absolute inset-0 glow-deep" style={{ opacity: glow }} />
 
         {/* Copy block — pinned high and compact so the large tube never reaches it */}
-        <div className="relative z-20 mx-auto flex max-w-7xl flex-col px-6 pt-5 text-center sm:pt-7">
+        <div className="relative z-20 mx-auto flex max-w-7xl flex-col px-6 pt-24 text-center sm:pt-28">
           <p className="eyebrow animate-rise-in">Finned tube engineering</p>
           <h1 className="mx-auto mt-3 max-w-4xl text-3xl font-bold leading-[0.95] sm:text-5xl lg:text-6xl">
             Heat transfer,
