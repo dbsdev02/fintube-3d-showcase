@@ -230,3 +230,26 @@
 @utility animate-fin-spin {
   animation: fin-spin 26s linear infinite;
 }
+
+@keyframes orbit-3d {
+  0% {
+    transform: translate3d(0, 0, 0) rotateY(-16deg) rotateX(6deg) rotateZ(-2deg);
+  }
+  25% {
+    transform: translate3d(2.2vh, -1.4vh, 40px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: translate3d(0, -2.6vh, 80px) rotateY(16deg) rotateX(-6deg) rotateZ(2deg);
+  }
+  75% {
+    transform: translate3d(-2.2vh, -1.4vh, 40px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotateY(-16deg) rotateX(6deg) rotateZ(-2deg);
+  }
+}
+
+@utility animate-orbit-3d {
+  animation: orbit-3d 14s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
