@@ -88,16 +88,20 @@ export function Hero3D() {
               transition: "transform 100ms linear",
             }}
           >
-            <img
-              src={heroTube}
-              alt="Copper spiral finned tube with machined fin profile"
-              width={1600}
-              height={912}
-              className="absolute left-1/2 top-1/2 h-auto w-[88vh] max-w-none drop-shadow-[0_40px_60px_rgba(0,0,0,0.7)]"
-              style={{
-                transform: `translate(calc(-50% + 18vh), -50%) rotate(110deg) rotateX(${spin}deg) rotateY(${tilt}deg) scale(${scale})`,
-              }}
-            />
+            <div className="absolute inset-0 animate-orbit-3d">
+              <img
+                src={heroTube}
+                alt="Copper spiral finned tube with machined fin profile"
+                width={1600}
+                height={912}
+                className="absolute left-1/2 top-1/2 h-auto w-[88vh] max-w-none drop-shadow-[0_40px_60px_rgba(0,0,0,0.7)]"
+                style={{
+                  transform: `translate(calc(-50% + 18vh), -50%) rotate(110deg) rotateX(${spin}deg) rotateY(${tilt}deg) scale(${scale})`,
+                  transformStyle: "preserve-3d",
+                }}
+              />
+            </div>
+
           </div>
         </div>
 
