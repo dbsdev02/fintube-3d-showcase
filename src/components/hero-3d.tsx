@@ -43,6 +43,12 @@ export function Hero3D() {
   const scale = 0.9 + ease * 0.1;
   const glow = 0.2 + ease * 0.65;
 
+  // Text drifts up and fades out as the tube takes over the stage.
+  const textShift = -ease * 22; // % upward travel
+  const textOpacity = Math.max(0, 1 - ease * 1.4);
+  const textScale = 1 - ease * 0.05;
+
+
 
   return (
     <section ref={ref} className="relative h-[240vh]">
