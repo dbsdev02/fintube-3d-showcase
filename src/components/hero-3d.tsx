@@ -43,6 +43,12 @@ export function Hero3D() {
   const scale = 0.9 + ease * 0.1;
   const glow = 0.2 + ease * 0.65;
 
+  // Text drifts up and fades out as the tube takes over the stage.
+  const textShift = -ease * 22; // % upward travel
+  const textOpacity = Math.max(0, 1 - ease * 1.4);
+  const textScale = 1 - ease * 0.05;
+
+
 
   return (
     <section ref={ref} className="relative h-[240vh]">
@@ -50,8 +56,15 @@ export function Hero3D() {
         <div className="absolute inset-0 grid-etch opacity-[0.35]" />
         <div className="absolute inset-0 glow-deep" style={{ opacity: glow }} />
 
-        {/* Copy block — pinned high and compact so the large tube never reaches it */}
-        <div className="relative z-20 mx-auto flex max-w-7xl flex-col px-6 pt-24 text-center sm:pt-28">
+        {/* Copy block — drifts up and fades away as the tube rises */}
+        <div
+          className="relative z-20 mx-auto flex max-w-7xl flex-col px-6 pt-24 text-center sm:pt-28 will-change-transform"
+          style={{
+            transform: `translateY(${textShift}%) scale(${textScale})`,
+            opacity: textOpacity,
+            transition: "transform 100ms linear, opacity 100ms linear",
+          }}
+        >
           <p className="eyebrow animate-rise-in">Finned tube engineering</p>
           <h1 className="mx-auto mt-3 max-w-4xl text-3xl font-bold leading-[0.95] sm:text-5xl lg:text-6xl">
             Heat transfer,
@@ -63,6 +76,7 @@ export function Hero3D() {
             base tubes — up to 12× the surface area of a bare tube.
           </p>
         </div>
+
 
         {/* 3D product stage — large, cropped close-up that rises from below */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[68vh] overflow-hidden">
