@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import heroTubeAsset from "@/assets/hero-tube-transparent.png.asset.json";
-const heroTube = heroTubeAsset.url;
+const heroTube = "/hero-tube-transparent.png";
 
 /**
  * Scroll-driven 3D hero: a vertical finned tube rises from below the fold,
@@ -38,7 +37,7 @@ export function Hero3D() {
   const p = Math.min(1, progress * 1.35);
   const ease = 1 - Math.pow(1 - p, 3);
 
-  const rise = 110 - ease * (110 - 13); // rises from fully below and settles clear of the copy
+  const rise = 110 - ease * 110; // rises from fully below and settles centered
   const spin = 20 - ease * 20;
   const tilt = -6 + ease * 6;
   const scale = 0.9 + ease * 0.1;
@@ -79,30 +78,29 @@ export function Hero3D() {
         </div>
 
 
-        {/* 3D product stage — large, cropped close-up that rises from below */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[68vh] overflow-hidden">
+        {/* 3D product stage — centered, rises from below */}
+        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center overflow-hidden">
           <div
-            className="absolute bottom-0 left-1/2 h-[66vh] w-[32vh] -translate-x-1/2 will-change-transform"
+            className="relative h-[95vh] w-[95vh] will-change-transform"
             style={{
-              transform: `translateX(-50%) translateY(${rise}%)`,
+              transform: `translateY(${rise}%)`,
               transformStyle: "preserve-3d",
               transition: "transform 100ms linear",
             }}
           >
-            <div className="absolute inset-0 animate-orbit-3d">
+            <div className="absolute inset-0 flex items-center justify-center animate-orbit-3d">
               <img
                 src={heroTube}
                 alt="Vertical copper finned heat exchanger tube"
                 width={1600}
                 height={912}
-                className="absolute left-1/2 top-1/2 h-auto w-[88vh] max-w-none drop-shadow-[0_40px_60px_rgba(0,0,0,0.7)]"
+                className="h-auto w-[92vh] max-w-none drop-shadow-[0_40px_60px_rgba(0,0,0,0.7)]"
                 style={{
-                  transform: `translate(-50%, -50%) rotateX(${spin}deg) rotateY(${tilt}deg) scale(${scale})`,
+                  transform: `rotateX(${spin}deg) rotateY(${tilt}deg) scale(${scale})`,
                   transformStyle: "preserve-3d",
                 }}
               />
             </div>
-
           </div>
         </div>
 
