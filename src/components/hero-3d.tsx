@@ -97,7 +97,7 @@ export function Hero3D() {
                 height={912}
                 className="absolute left-1/2 top-1/2 h-auto w-[88vh] max-w-none drop-shadow-[0_40px_60px_rgba(0,0,0,0.7)]"
                 style={{
-                  transform: `translate(calc(-50% + 18vh), -50%) rotate(110deg) rotateX(${spin}deg) rotateY(${tilt}deg) scale(${scale})`,
+                  transform: `translate(-50%, -50%) rotateX(${spin}deg) rotateY(${tilt}deg) scale(${scale})`,
                   transformStyle: "preserve-3d",
                 }}
               />
