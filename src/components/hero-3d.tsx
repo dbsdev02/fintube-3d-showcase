@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import heroTubeAsset from "@/assets/hero-tube-new.jpeg.asset.json";
+import heroTubeAsset from "@/assets/hero-tube-transparent.png.asset.json";
 const heroTube = heroTubeAsset.url;
 
 /**
