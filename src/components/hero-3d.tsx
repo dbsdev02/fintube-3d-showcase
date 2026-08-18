@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import heroTubeAsset from "@/assets/hero-tube-transparent.png.asset.json";
-const heroTube = heroTubeAsset.url;
+const heroTube = "/hero-tube-transparent.png";
 
 /**
  * Scroll-driven 3D hero: a vertical finned tube rises from below the fold,
