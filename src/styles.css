@@ -233,19 +233,19 @@
 
 @keyframes orbit-3d {
   0% {
-    transform: translate3d(0, 0, 0) rotateY(-16deg) rotateX(6deg) rotateZ(-2deg);
+    transform: translate3d(0, 0, 0) rotateY(-8deg) rotateX(3deg) rotateZ(-1deg);
   }
   25% {
-    transform: translate3d(2.2vh, -1.4vh, 40px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    transform: translate3d(0.8vh, -1.2vh, 40px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
   }
   50% {
-    transform: translate3d(0, -2.6vh, 80px) rotateY(16deg) rotateX(-6deg) rotateZ(2deg);
+    transform: translate3d(0, -2.2vh, 80px) rotateY(8deg) rotateX(-3deg) rotateZ(1deg);
   }
   75% {
-    transform: translate3d(-2.2vh, -1.4vh, 40px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    transform: translate3d(-0.8vh, -1.2vh, 40px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
   }
   100% {
-    transform: translate3d(0, 0, 0) rotateY(-16deg) rotateX(6deg) rotateZ(-2deg);
+    transform: translate3d(0, 0, 0) rotateY(-8deg) rotateX(3deg) rotateZ(-1deg);
   }
 }
 
