@@ -79,17 +79,17 @@ export function Hero3D() {
         </div>
 
 
-        {/* 3D product stage — full-screen centered, rises from below */}
+        {/* 3D product stage — centered, rises from below */}
         <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center overflow-hidden">
           <div
-            className="relative flex h-[90vh] w-[55vh] items-center justify-center will-change-transform"
+            className="relative h-[95vh] w-[95vh] will-change-transform"
             style={{
               transform: `translateY(${rise}%)`,
               transformStyle: "preserve-3d",
               transition: "transform 100ms linear",
             }}
           >
-            <div className="animate-orbit-3d">
+            <div className="absolute inset-0 flex items-center justify-center animate-orbit-3d">
               <img
                 src={heroTube}
                 alt="Vertical copper finned heat exchanger tube"
